@@ -1,11 +1,13 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.css'
+import './assets/index.css'
+
 import App from './App.tsx'
-import Header from './Header.tsx'
+import Sidebar from './resources/Sidebar.tsx'
+import Graficas from './resources/Grficas.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <Header />
+    <Sidebar />
   </StrictMode>,
 )
