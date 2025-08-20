@@ -19,10 +19,16 @@ function Informes() {
 
                 <div className="header-table">
                     <button><SaveAltIcon sx={{ fontSize: 20 }} /></button>
+
+                    <div className="search">
+                        <input type="text" />
+                    </div>
+
                 </div>
 
+
                 <table className="table">
-                    <thead>
+                    <thead className="thead">
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">First</th>

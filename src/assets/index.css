@@ -209,16 +209,38 @@ body {
 
 /*TABLES*/
 .container-table{
-  margin: 3%;
+  margin: 2%;
   border: solid 3px #414141;
   border-radius: 8px;
   color: #242424;
+  padding: 7px;
 }
+
+.header-table{
+  background: aquamarine;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 3px ;
+  
+}
+
+
+.header-table .search input{
+  border-radius: 5px;
+  padding: 7px;
+}
+
 
 table{
   background: red;
   width: 100%;
-  padding: 15px;
+}
+
+
+
+table .thead{
+  background: blue;
 }
 
 .header-table button{
