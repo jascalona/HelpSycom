@@ -40,7 +40,7 @@ body {
   margin: 0;
   font-family: system-ui, sans-serif;
   background-color: #f3f1f1;
-  min-height: 100vh; 
+  min-height: 100vh;
 }
 
 /*CONTENEDOR PRINCIPAL - MAQUETACIÓN CON GRID*/
@@ -51,7 +51,7 @@ body {
     "nav main";
   grid-template-rows: auto 1fr;
   grid-template-columns: 230px 1fr;
-  height: 100vh; 
+  height: 100vh;
   padding: 10px;
   gap: 9px;
 }
@@ -63,6 +63,39 @@ body {
   padding: 10px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header .content-header {
+  display: flex;
+  justify-content: space-between;
+  margin: auto 30px;
+}
+
+.header .title-header {
+  color: #242424;
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.header .name-user{
+  display: flex;
+  justify-content: center;
+}
+
+.header button {
+  background-color: transparent;
+  border: solid rgba(128, 128, 128, 0.264) 1px;
+  color: #414141;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  margin: 10px;
+  transition: all .4s;
+}
+
+.header button:hover {
+  background: #1a1919a2;
+  color: #ffff;
 }
 
 .header h1 {
@@ -110,7 +143,7 @@ body {
 
 .nav .btn-document {
   margin: 10px;
-  margin-top: auto; 
+  margin-top: auto;
 }
 
 /*MAIN CONTAINER*/
@@ -121,7 +154,7 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 10px;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
 }
 
 .container-main .pages {
@@ -139,41 +172,56 @@ body {
   font-size: 25px;
   font-weight: 700;
 }
+
 .pages small {
   font-size: 13px;
   font-weight: 600;
 }
 
 /*GRAFICAS*/
-.card-graphic {
-  background: red;
-}
-
 .container-main .content-body {
   padding: 5px;
   margin: 10px;
-  flex-grow: 1; 
+  flex-grow: 1;
 }
 
-.content-body .gallery-grag{
+.content-body .gallery-grag {
   display: grid;
   padding: 2%;
   gap: 5%;
 }
 
-.gallery-grag .card-grag{
+.gallery-grag .card-grag {
   background: #fff;
   box-shadow: 2px 5px 8px 4px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   padding: 20px;
   color: #414141;
   min-height: 200px;
-  
+
 }
 
 @media (min-width: 992px) {
-  .gallery-grag{
+  .gallery-grag {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+/*TABLES*/
+.container-table{
+  margin: 3%;
+  border: solid 3px #414141;
+  border-radius: 8px;
+  color: #242424;
+}
+
+table{
+  background: red;
+  width: 100%;
+  padding: 15px;
+}
+
+.header-table button{
+  padding: 8px 10px;
 }
 
