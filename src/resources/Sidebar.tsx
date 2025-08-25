@@ -2,8 +2,8 @@ import { useState } from 'react'
 import { Routes, Route, Link } from 'react-router-dom';
 
 import Dashboard from './Dashboard'
-import Informes from './Informes'
 import GroupUser from './GroupUser'
+import Historial from './Historial';
 
 
 // Importaciones de Material UI
@@ -87,7 +87,7 @@ function Sidebar() {
 
                     <ul>
                         <Link className='link' to="/Dashboard"><li>Dashboard</li></Link>
-                        <Link className='link' to="/"><li>Tikes</li></Link>
+                        <Link className='link' to="/Historial"><li>Historial</li></Link>
                         <Link className='link' to="/Informes"><li>Informes</li></Link>
                         <Link className='link' to="/GroupUser"><li>Grupo de Usuarios</li></Link>
                     </ul>
@@ -99,8 +99,8 @@ function Sidebar() {
 
                     <Routes>
                         <Route path='/Dashboard' element={<Dashboard />} />
-                        <Route path='/Informes' element={<Informes />} />
                         <Route path='/GroupUser' element={<GroupUser />} />
+                        <Route path='/Historial' element={<Historial />} />
                     </Routes>
 
                 </main>
