@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Routes, Route, Link } from 'react-router-dom';
 
 import Dashboard from './Dashboard'
-import Ticket from './Ticket'
+import Ticket from './Productos'
 import GroupUser from './GroupUser'
 import Historial from './Historial';
 
@@ -88,7 +88,7 @@ function Sidebar() {
 
                     <ul>
                         <Link className='link' to="/Dashboard"><li>Dashboard</li></Link>
-                        <Link className='link' to="/Ticket"><li>Nuevo Ticket</li></Link>
+                        <Link className='link' to="/Ticket"><li>Productos</li></Link>
                         <Link className='link' to="/Historial"><li>Historial</li></Link>
                         <Link className='link' to="/GroupUser"><li>Grupo de Usuarios</li></Link>
                     </ul>
