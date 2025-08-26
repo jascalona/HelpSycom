@@ -85,30 +85,85 @@ function Sidebar() {
                 </header>
 
                 <nav className="nav">
-                    <div className="logo">
-                        <p>Logo</p>
+                    <div className="sidebar-header">
+                        <i className="icon"></i>
+                        <h3>Creative Tim</h3>
                     </div>
 
-                    <ul>
-                        <Link className='link' to="/Dashboard"><li><DashboardIcon /> Dashboard</li></Link>
-                        {/* Elemento de "Productos" con dropdown */}
-                        <li onClick={toggleProductos} className="dropdown-toggle">
-                            <DashboardIcon />
-                            <span>Productos</span>
-                            {isProductosOpen ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
-                        </li>
-                        {isProductosOpen && (
-                            <ul className="dropdown-menu">
-                                <Link className='link dropdown-item' to="/Productos/Bancarios"><li>Productos Bancarios</li></Link>
-                                <Link className='link dropdown-item' to="/Productos/Financieros"><li>Productos Financieros</li></Link>
-                                <Link className='link dropdown-item' to="/Productos/Tecnologicos"><li>Productos Tecnológicos</li></Link>
-                            </ul>
-                        )}
-                        <Link className='link' to="/Historial"><li>Historial</li></Link>
-                        <Link className='link' to="/GroupUser"><li>Grupo de Usuarios</li></Link>
-                    </ul>
+                    <div className="sidebar-nav">
+                        <h6 className="nav-title">MENU</h6>
+                        <ul>
+                            <li className="nav-item active">
+                                <a href="#">
+                                    <i className="icon"></i>
+                                    <span>Dashboard</span>
+                                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a href="#">
+                                    <i className="icon"></i>
+                                    <span>Tables</span>
+                                </a>
+                            </li>
+                            <li className="nav-item dropdown">
+                                <a href="#" className="dropdown-toggle">
+                                    <i className="icon"></i>
+                                    <span>Virtual Reality</span>
+                                    <i className="arrow">▼</i>
+                                </a>
+                                <ul className="dropdown-menu">
+                                    <li><a href="#">VR View</a></li>
+                                    <li><a href="#">360º Tour</a></li>
+                                    <li><a href="#">VR Gallery</a></li>
+                                </ul>
+                            </li>
+                            <li className="nav-item">
+                                <a href="#">
+                                    <i className="icon"></i>
+                                    <span>RTL</span>
+                                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a href="#">
+                                    <i className="icon"></i>
+                                    <span>Notifications</span>
+                                </a>
+                            </li>
+                        </ul>
 
-                    <button className='btn-document'>Documentación</button>
+                        <h6 className="nav-title">ACCOUNT PAGES</h6>
+                        <ul>
+                            <li className="nav-item dropdown">
+                                <a href="#" className="dropdown-toggle">
+                                    <i className="icon"></i>
+                                    <span>Profile</span>
+                                    <i className="arrow">▼</i>
+                                </a>
+                                <ul className="dropdown-menu">
+                                    <li><a href="#">My Profile</a></li>
+                                    <li><a href="#">Edit Account</a></li>
+                                    <li><a href="#">Logout</a></li>
+                                </ul>
+                            </li>
+                            <li className="nav-item">
+                                <a href="#">
+                                    <i className="icon"></i>
+                                    <span>Sign In</span>
+                                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a href="#">
+                                    <i className="icon"></i>
+                                    <span>Sign Up</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div className="sidebar-footer">
+                        <a href="#" className="btn btn-outline">Documentation</a>
+                    </div>
+
                 </nav>
 
                 <main className="container-main">
