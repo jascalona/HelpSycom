@@ -49,25 +49,30 @@ hr {
 }
 
 .gallery-product {
-    height: 100%;
+    height: 500px;
+    overflow-y: scroll;
+    margin: 3px;
 }
 
 .test {
     background: rgb(52, 51, 51);
+    width: 325px;
+    padding: 3px;
 }
 
 .sidebar .title {
     background: #181818;
     padding: 2px 15px;
     border-radius: 4px 4px 0px 0px;
-    margin: 0;
+    margin: 0;  
     font-size: 15px;
     font-weight: 800;
 }
 
 .sidebar .card-product {
-    padding: 2px 15px;
-    margin: 10px auto;
+    width: 300px;
+    padding: 5px;
+    margin: 10px;
 }
 
 .sidebar .card-product small {

@@ -21,7 +21,7 @@ function Ticket() {
                 <div className="sidebar">
 
                     <div className="title">
-                        <p>Tickets Proritarios</p>
+                        <p>Tickets Proritarios <strong>(18)</strong></p>
                     </div>
 
                     <div className="gallery-product">
