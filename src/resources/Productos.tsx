@@ -7,6 +7,7 @@ import GroupAddIcon from '@mui/icons-material/GroupAdd';
 
 function Ticket() {
     const pages = "Sypago"
+
     return (
         <>
 

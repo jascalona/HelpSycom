@@ -10,9 +10,13 @@ import Historial from './Historial';
 // Importaciones de Material UI
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
+import DashboardIcon from '@mui/icons-material/Dashboard';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'; // <-- Nuevo ícono
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'; // <-- Nuevo ícono
 
-import Modal from '@mui/material/Modal'; // Importa el componente Modal
-import Box from '@mui/material/Box'; // Importa Box para dar estilo al contenido
+
+import Modal from '@mui/material/Modal';
+import Box from '@mui/material/Box';
 
 
 function Sidebar() {
@@ -22,6 +26,14 @@ function Sidebar() {
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+
+    // Estado para el menú desplegable de Productos
+    const [isProductosOpen, setIsProductosOpen] = useState(false);
+
+    const toggleProductos = () => {
+        setIsProductosOpen(!isProductosOpen);
+    };
+
     return (
         <>
             <div className="contenedor-principal">
@@ -36,8 +48,6 @@ function Sidebar() {
                                 <button className='btn-notification' onClick={handleOpen}>
                                     <NotificationsActiveIcon sx={{ fontSize: 20 }} />
                                 </button>
-
-                                {/* El componente Modal */}
                                 <Modal
                                     open={open}
                                     onClose={handleClose}
@@ -57,12 +67,8 @@ function Sidebar() {
                                         boxShadow: 24,
                                         p: 4,
                                     }}>
-                                        <h2 id="modal-modal-title">
-                                            Notificaciones
-                                        </h2>
-                                        <p id="modal-modal-description">
-                                            Aquí irán tus notificaciones.
-                                        </p>
+                                        <h2 id="modal-modal-title">Notificaciones</h2>
+                                        <p id="modal-modal-description">Aquí irán tus notificaciones.</p>
                                     </Box>
                                 </Modal>
                             </div>
@@ -74,42 +80,51 @@ function Sidebar() {
                             </div>
                         </div>
 
-
-
                     </div>
 
                 </header>
 
                 <nav className="nav">
-
                     <div className="logo">
                         <p>Logo</p>
                     </div>
 
                     <ul>
-                        <Link className='link' to="/Dashboard"><li>Dashboard</li></Link>
-                        <Link className='link' to="/Ticket"><li>Productos</li></Link>
+                        <Link className='link' to="/Dashboard"><li><DashboardIcon /> Dashboard</li></Link>
+                        {/* Elemento de "Productos" con dropdown */}
+                        <li onClick={toggleProductos} className="dropdown-toggle">
+                            <DashboardIcon />
+                            <span>Productos</span>
+                            {isProductosOpen ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
+                        </li>
+                        {isProductosOpen && (
+                            <ul className="dropdown-menu">
+                                <Link className='link dropdown-item' to="/Productos/Bancarios"><li>Productos Bancarios</li></Link>
+                                <Link className='link dropdown-item' to="/Productos/Financieros"><li>Productos Financieros</li></Link>
+                                <Link className='link dropdown-item' to="/Productos/Tecnologicos"><li>Productos Tecnológicos</li></Link>
+                            </ul>
+                        )}
                         <Link className='link' to="/Historial"><li>Historial</li></Link>
                         <Link className='link' to="/GroupUser"><li>Grupo de Usuarios</li></Link>
                     </ul>
 
-                    <button className='btn-document'>Documentacion</button>
+                    <button className='btn-document'>Documentación</button>
                 </nav>
 
                 <main className="container-main">
-
                     <Routes>
                         <Route path='/Dashboard' element={<Dashboard />} />
-                        <Route path='/Ticket' element={<Ticket />} />
+                        <Route path='/Ticket' element={<Ticket />} /> {/* Nota: Puedes mantener esta ruta si la necesitas */}
+                        <Route path='/Productos/Bancarios' element={<Ticket />} />
+                        <Route path='/Productos/Financieros' element={<Ticket />} />
+                        <Route path='/Productos/Tecnologicos' element={<Ticket />} />
                         <Route path='/GroupUser' element={<GroupUser />} />
                         <Route path='/Historial' element={<Historial />} />
                     </Routes>
-
                 </main>
             </div>
         </>
     )
-
 }
 
 export default Sidebar
