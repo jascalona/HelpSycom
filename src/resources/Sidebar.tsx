@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Routes, Route, Link } from 'react-router-dom';
 
 import Dashboard from './Dashboard'
-import Ticket from './ticket'
+import Ticket from './Ticket'
 import GroupUser from './GroupUser'
 import Historial from './Historial';
 
