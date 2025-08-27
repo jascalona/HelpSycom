@@ -50,7 +50,7 @@ hr {
 
 .gallery-product {
     height: 500px;
-    overflow-y: scroll;
+    overflow-y: auto;
     margin: 3px;
 }
 

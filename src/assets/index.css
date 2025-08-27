@@ -125,6 +125,7 @@ body {
   padding: 10px;
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
 }
 
 .sidebar-header {
@@ -208,6 +209,10 @@ body {
 
 .dropdown-menu li .icon{
   height: 18px;
+}
+
+.dropdown-menu{
+  font-size: 14px;
 }
 
 .sidebar-footer {
