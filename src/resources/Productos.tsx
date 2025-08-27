@@ -2,6 +2,7 @@ import { useState } from "react";
 import SaveAltIcon from '@mui/icons-material/SaveAlt';
 import GroupAddIcon from '@mui/icons-material/GroupAdd';
 
+import SearchIcon from '@mui/icons-material/Search';
 
 
 
@@ -20,10 +21,19 @@ function Ticket() {
                 </div>
 
                 <div className="sidebar">
+                    <div className="head-sidebar">
+                        <div className="title">
+                            <p>Tickets Proritarios <strong>(18)</strong></p>
+                            <hr />
+                            <div className="search">
+                                <input type="text" placeholder="Buscar..." />
+                                <span className="search-icon"><SearchIcon sx={{fontSize: 20}}/></span>
+                            </div>
 
-                    <div className="title">
-                        <p>Tickets Proritarios <strong>(18)</strong></p>
+                        </div>
+
                     </div>
+
 
                     <div className="gallery-product">
 
@@ -69,6 +79,11 @@ function Ticket() {
                 </div>
 
                 <div className="content-ticket">
+                    <div className="head-content-ticket">
+                        <p>Other Option</p>                        
+                    </div>
+
+                    
 
                 </div>
 
