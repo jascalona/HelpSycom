@@ -127,13 +127,17 @@ body {
   flex-direction: column;
 }
 
-
 .sidebar-header {
   display: flex;
+  justify-content: center;
   align-items: center;
   padding: 1rem 0;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e03f;
   margin-bottom: 1rem;
+}
+
+.sidebar-header strong{
+  color: #02ca02;
 }
 
 .sidebar-header .icon {
@@ -176,15 +180,16 @@ body {
 .nav-item a {
   display: flex;
   align-items: center;
-  padding: 0.75rem 1rem;
+  padding: 0.60rem 1rem;
   text-decoration: none;
-  color: #333;
-  border-radius: 0.5rem;
-  transition: background-color 0.2s, color 0.2s;
+  color: #f3f3f3d7;
+  border-radius: 2px;
+  transition: background-color 0.3s;
 }
 
 .nav-item a:hover {
-  background-color: #f0f2f5;
+  background-color: #404040;
+  color: #ffff;
 }
 
 .nav-item.active a {
@@ -194,15 +199,15 @@ body {
 }
 
 .nav-item a .icon {
-  width: 24px;
-  height: 24px;
-  background-color: #b0b0b0; /* Color gris de los iconos */
+  width: 20px;
+  height: 20px;
   border-radius: 4px;
   margin-right: 1rem;
+  align-items: center;
 }
 
-.nav-item.active a .icon {
-  background-color: #ffffff;
+.dropdown-menu li .icon{
+  height: 18px;
 }
 
 .sidebar-footer {

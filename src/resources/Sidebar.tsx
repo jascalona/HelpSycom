@@ -6,13 +6,32 @@ import Ticket from './Productos'
 import GroupUser from './GroupUser'
 import Historial from './Historial';
 
-
 // Importaciones de Material UI
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 import DashboardIcon from '@mui/icons-material/Dashboard';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'; // <-- Nuevo ícono
-import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'; // <-- Nuevo ícono
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import CategoryIcon from '@mui/icons-material/Category';
+import TimerOffIcon from '@mui/icons-material/TimerOff';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import PersonOffIcon from '@mui/icons-material/PersonOff';
+import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
+import AllInboxIcon from '@mui/icons-material/AllInbox';
+import ConfirmationNumberIcon from '@mui/icons-material/ConfirmationNumber';
+import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd';
+import AreaChartIcon from '@mui/icons-material/AreaChart';
+import GroupIcon from '@mui/icons-material/Group';
+import HandymanIcon from '@mui/icons-material/Handyman';
+import PersonIcon from '@mui/icons-material/Person';
+
+
+//Icon product
+import SpeakerPhoneIcon from '@mui/icons-material/SpeakerPhone';
+import DevicesIcon from '@mui/icons-material/Devices';
+import CurrencyExchangeIcon from '@mui/icons-material/CurrencyExchange';
+
+
 
 
 import Modal from '@mui/material/Modal';
@@ -27,11 +46,18 @@ function Sidebar() {
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
-    // Estado para el menú desplegable de Productos
-    const [isProductosOpen, setIsProductosOpen] = useState(false);
+    // Estados para los menús desplegables
+    const [openMenus, setOpenMenus] = useState<Record<string, boolean>>({
+        'Ticket': false,
+        //'profile': false,
+        'productos': false
+    });
 
-    const toggleProductos = () => {
-        setIsProductosOpen(!isProductosOpen);
+    const toggleMenu = (menuId: string) => {
+        setOpenMenus(prev => ({
+            ...prev,
+            [menuId]: !prev[menuId]
+        }));
     };
 
     return (
@@ -86,78 +112,115 @@ function Sidebar() {
 
                 <nav className="nav">
                     <div className="sidebar-header">
-                        <i className="icon"></i>
-                        <h3>Creative Tim</h3>
+                        <h3><strong>S</strong>ycom</h3>
                     </div>
 
                     <div className="sidebar-nav">
                         <h6 className="nav-title">MENU</h6>
                         <ul>
-                            <li className="nav-item active">
-                                <a href="#">
-                                    <i className="icon"></i>
+
+                            <li className={`nav-item ${openMenus['dashboard'] ? 'active' : ''}`}>
+                                <Link to="/Dashboard">
+                                    <span className="icon"><DashboardIcon sx={{ fontSize: 20 }} /></span>
                                     <span>Dashboard</span>
-                                </a>
+                                </Link>
                             </li>
-                            <li className="nav-item">
-                                <a href="#">
-                                    <i className="icon"></i>
-                                    <span>Tables</span>
+
+                            <li className={`nav-item ${openMenus['Ticket'] ? 'active' : ''}`}>
+                                <a href="#" onClick={(e) => {
+                                    e.preventDefault();
+                                    toggleMenu('Ticket');
+                                }} className="dropdown-toggle">
+                                    <span className="icon"><ConfirmationNumberIcon sx={{ fontSize: 20 }} /></span>
+                                    <span>Ticket</span>
+                                    {openMenus['Ticket'] ?
+                                        <KeyboardArrowUpIcon sx={{ fontSize: 18 }} /> :
+                                        <KeyboardArrowDownIcon sx={{ fontSize: 18 }} />
+                                    }
                                 </a>
+                                {openMenus['Ticket'] && (
+                                    <ul className="dropdown-menu">
+                                        <li><Link to="/Productos/Bancarios"><span className='icon'><PlaylistAddIcon sx={{ fontSize: 18 }} /></span> Nuevo Ticket</Link></li>
+                                        <li><Link to="/Productos/Financieros"><span className='icon'><AllInboxIcon sx={{ fontSize: 18 }} /></span> Bandeja de entra...</Link></li>
+                                        <li><Link to="/Productos/Tecnologicos"><span className='icon'><VerifiedUserIcon sx={{ fontSize: 18 }} /></span> Asignados</Link></li>
+                                        <li><Link to="/Productos/Tecnologicos"><span className='icon'><PersonOffIcon sx={{ fontSize: 18 }} /></span> Sin Asignar</Link></li>
+                                        <li><Link to="/Productos/Financieros"><span className='icon'><CheckCircleIcon sx={{ fontSize: 18 }} /></span> Cerrado</Link></li>
+                                        <li><Link to="/Productos/Financieros"><span className="icon"><TimerOffIcon sx={{ fontSize: 18 }} /></span> Atrasado</Link></li>
+                                    </ul>
+                                )}
                             </li>
-                            <li className="nav-item dropdown">
-                                <a href="#" className="dropdown-toggle">
-                                    <i className="icon"></i>
-                                    <span>Virtual Reality</span>
-                                    <i className="arrow">▼</i>
-                                </a>
-                                <ul className="dropdown-menu">
-                                    <li><a href="#">VR View</a></li>
-                                    <li><a href="#">360º Tour</a></li>
-                                    <li><a href="#">VR Gallery</a></li>
-                                </ul>
+
+                            <li className={`nav-item ${openMenus['historial'] ? 'active' : ''}`}>
+                                <Link to="/Historial">
+                                    <span className="icon"><AreaChartIcon sx={{ fontSize: 20 }} /></span>
+                                    <span>Reportes</span>
+                                </Link>
                             </li>
-                            <li className="nav-item">
-                                <a href="#">
-                                    <i className="icon"></i>
-                                    <span>RTL</span>
+
+                            <li className={`nav-item ${openMenus['productos'] ? 'active' : ''}`}>
+                                <a href="#" onClick={(e) => {
+                                    e.preventDefault();
+                                    toggleMenu('productos');
+                                }} className="dropdown-toggle">
+                                    <span className="icon"><CategoryIcon sx={{ fontSize: 20 }} /></span>
+                                    <span>Productos</span>
+                                    {openMenus['productos'] ?
+                                        <KeyboardArrowUpIcon sx={{ fontSize: 18 }} /> :
+                                        <KeyboardArrowDownIcon sx={{ fontSize: 18 }} />
+                                    }
                                 </a>
-                            </li>
-                            <li className="nav-item">
-                                <a href="#">
-                                    <i className="icon"></i>
-                                    <span>Notifications</span>
-                                </a>
+                                {openMenus['productos'] && (
+                                    <ul className="dropdown-menu">
+                                        <li><Link to="/Productos/Tecnologicos"><span className='icon'><SpeakerPhoneIcon sx={{ fontSize: 18 }} /></span> SYPAGO</Link></li>
+                                        <li><Link to="/Productos/Financieros"><span className='icon'><DevicesIcon sx={{ fontSize: 18 }} /></span> SIMF</Link></li>
+                                        <li><Link to="/Productos/Financieros"><span className="icon"><CurrencyExchangeIcon sx={{ fontSize: 18 }} /></span> SGLPAR</Link></li>
+                                    </ul>
+                                )}
                             </li>
                         </ul>
 
-                        <h6 className="nav-title">ACCOUNT PAGES</h6>
+                        <h6 className="nav-title">Mi cuenta</h6>
                         <ul>
-                            <li className="nav-item dropdown">
-                                <a href="#" className="dropdown-toggle">
-                                    <i className="icon"></i>
-                                    <span>Profile</span>
-                                    <i className="arrow">▼</i>
+                            <li className={`nav-item ${openMenus['profile'] ? 'active' : ''}`}>
+                                <a href="#" onClick={(e) => {
+                                    e.preventDefault();
+                                    toggleMenu('profile');
+                                }} className="dropdown-toggle">
+                                    <span className="icon"><PersonIcon sx={{fontSize: 20}}/></span>
+                                    <span>Perfil</span>
                                 </a>
-                                <ul className="dropdown-menu">
-                                    <li><a href="#">My Profile</a></li>
-                                    <li><a href="#">Edit Account</a></li>
-                                    <li><a href="#">Logout</a></li>
-                                </ul>
+                      
                             </li>
+
                             <li className="nav-item">
                                 <a href="#">
-                                    <i className="icon"></i>
-                                    <span>Sign In</span>
+                                    <span className="icon">🔑</span>
+                                    <span>Cerrar Sesion</span>
                                 </a>
                             </li>
-                            <li className="nav-item">
-                                <a href="#">
-                                    <i className="icon"></i>
-                                    <span>Sign Up</span>
-                                </a>
+
+
+                        </ul>
+
+                        <h6 className="nav-title">Ajustes</h6>
+                        <ul>
+
+                            <li className={`nav-item ${openMenus['group-user'] ? 'active' : ''}`}>
+                                <Link to="/GroupUser">
+                                    <span className="icon"><GroupIcon sx={{ fontSize: 20 }} /></span>
+                                    <span>Grupo de Usuarios</span>
+                                </Link>
+                            </li>
+
+
+                             <li className={`nav-item ${openMenus['group-user'] ? 'active' : ''}`}>
+                                <Link to="/GroupUser">
+                                    <span className="icon"><HandymanIcon sx={{ fontSize: 20 }} /></span>
+                                    <span>Herramientas</span>
+                                </Link>
                             </li>
                         </ul>
+
                     </div>
 
                     <div className="sidebar-footer">
@@ -169,7 +232,6 @@ function Sidebar() {
                 <main className="container-main">
                     <Routes>
                         <Route path='/Dashboard' element={<Dashboard />} />
-                        <Route path='/Ticket' element={<Ticket />} /> {/* Nota: Puedes mantener esta ruta si la necesitas */}
                         <Route path='/Productos/Bancarios' element={<Ticket />} />
                         <Route path='/Productos/Financieros' element={<Ticket />} />
                         <Route path='/Productos/Tecnologicos' element={<Ticket />} />
