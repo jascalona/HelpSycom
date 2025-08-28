@@ -43,40 +43,36 @@ function Ticket() {
 
                     </div>
 
-                        <ul className="gallery-product">
+                    <div className="gallery-product">
 
-                            <li>
-                                <article className="cards-message">
-                                    <div className="content-card">
-                                        <div className="h-message">
-                                            <small>{createdBy}</small>
-                                            <small>{dateTicket}</small>
-                                        </div>
+                        <article className="cards-message">
+                            <div className="content-card">
+                                <div className="h-message">
+                                    <small>{createdBy}</small>
+                                    <small>{dateTicket}</small>
+                                </div>
 
-                                        <div className="h-asunto">
-                                            <span >{Asunto}</span>
-                                        </div>
-                                    </div>
-                                    <hr />
-                                </article>
-                            </li>
+                                <div className="h-asunto">
+                                    <span >{Asunto}</span>
+                                </div>
+                            </div>
+                            <hr />
+                        </article>
 
-                            <li>
-                                <article className="cards-message">
-                                    <div className="content-card">
-                                        <div className="h-message">
-                                            <small>{createdBy}</small>
-                                            <small>{dateTicket}</small>
-                                        </div>
+                        <article className="cards-message">
+                            <div className="content-card">
+                                <div className="h-message">
+                                    <small>{createdBy}</small>
+                                    <small>{dateTicket}</small>
+                                </div>
 
-                                        <div className="h-asunto">
-                                            <span >{Asunto}</span>
-                                        </div>
-                                    </div>
-                                    <hr />
-                                </article>
-                            </li>
-                        </ul>
+                                <div className="h-asunto">
+                                    <span >{Asunto}</span>
+                                </div>
+                            </div>
+                            <hr />
+                        </article>
+                    </div>
 
                 </div>
 

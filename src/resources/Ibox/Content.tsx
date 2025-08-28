@@ -8,4 +8,4 @@ function ContentMsj(){
 
 }
 
-export default ContentMsj;
+export default ContentMsj
