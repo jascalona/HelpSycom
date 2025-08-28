@@ -31,6 +31,7 @@ import SpeakerPhoneIcon from '@mui/icons-material/SpeakerPhone';
 import DevicesIcon from '@mui/icons-material/Devices';
 import CurrencyExchangeIcon from '@mui/icons-material/CurrencyExchange';
 
+//Inbox
 
 
 
@@ -140,7 +141,7 @@ function Sidebar() {
                                 </a>
                                 {openMenus['Ticket'] && (
                                     <ul className="dropdown-menu">
-                                        <li><Link to=""><span className='icon'><PlaylistAddIcon sx={{ fontSize: 18 }} /></span> Nuevo Ticket</Link></li>
+                                        <li><Link to="./"><span className='icon'><PlaylistAddIcon sx={{ fontSize: 18 }} /></span> Nuevo Ticket</Link></li>
                                         <li><Link to="/Inbox"><span className='icon'><AllInboxIcon sx={{ fontSize: 18 }} /></span> Bandeja de entra...</Link></li>
                                         <li><Link to=""><span className='icon'><CheckCircleIcon sx={{ fontSize: 18 }} /></span> Cerrado</Link></li>
                                         <li><Link to=""><span className="icon"><TimerOffIcon sx={{ fontSize: 18 }} /></span> Atrasado</Link></li>
