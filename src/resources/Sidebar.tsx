@@ -142,8 +142,6 @@ function Sidebar() {
                                     <ul className="dropdown-menu">
                                         <li><Link to="/Productos/Bancarios"><span className='icon'><PlaylistAddIcon sx={{ fontSize: 18 }} /></span> Nuevo Ticket</Link></li>
                                         <li><Link to="/Productos/Financieros"><span className='icon'><AllInboxIcon sx={{ fontSize: 18 }} /></span> Bandeja de entra...</Link></li>
-                                        <li><Link to="/Productos/Tecnologicos"><span className='icon'><VerifiedUserIcon sx={{ fontSize: 18 }} /></span> Asignados</Link></li>
-                                        <li><Link to="/Productos/Tecnologicos"><span className='icon'><PersonOffIcon sx={{ fontSize: 18 }} /></span> Sin Asignar</Link></li>
                                         <li><Link to="/Productos/Financieros"><span className='icon'><CheckCircleIcon sx={{ fontSize: 18 }} /></span> Cerrado</Link></li>
                                         <li><Link to="/Productos/Financieros"><span className="icon"><TimerOffIcon sx={{ fontSize: 18 }} /></span> Atrasado</Link></li>
                                     </ul>
