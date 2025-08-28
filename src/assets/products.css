@@ -91,12 +91,6 @@ hr {
     margin: 3px;
 }
 
-.test {
-    background: rgb(52, 51, 51);
-    width: 325px;
-    padding: 3px;
-}
-
 .sidebar .title {
     background: #181818;
     padding: 2px 15px;
@@ -106,28 +100,33 @@ hr {
     font-weight: 800;
 }
 
-.sidebar .card-product {
-    width: 300px;
-    padding: 5px;
-    margin: 10px;
+.sidebar .cards-message {
+    width: 100%;
+    line-height: 1.7;
 }
 
-.sidebar .card-product small {
-    font-size: 13px;
+.cards-message .content-card{
+    padding: 8px;
 }
 
-.sidebar .card-product h3 {
-    font-size: 16px;
-    font-weight: 600;
+.h-message{
+    display: flex;
+    justify-content: space-between;
 }
 
-.sidebar .card-product p {
+.h-asunto {
+    width: 90%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sidebar .cards-message p {
     font-size: 12px;
 }
 
 .content-ticket {
     grid-area: main;
-    border: solid 1px #fff;
     background-image: url(./images/cubo.png);
     background-repeat: no-repeat;
     background-position: center;
@@ -141,7 +140,8 @@ hr {
 
 .head-content-ticket {
     padding: 1px 20px;
-    border-bottom: solid 1px #ffffff4b;
+    border-bottom: solid 1px #ffffff1b;
+    margin: auto 10px;
     height: 112px;
 }
 
@@ -181,12 +181,11 @@ header-content-ticket {
     margin: 10px;
     padding: 20px;
     flex-grow: 1;
-    border: solid;
     height: 600px;
     overflow: auto;
 }
 
-.content-message .body-menssage{
+.content-message .body-menssage {
     color: #fff;
-    
+
 }

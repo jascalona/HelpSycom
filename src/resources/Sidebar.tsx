@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Routes, Route, Link } from 'react-router-dom';
 
 import Dashboard from './Dashboard'
-import Ticket from './Productos'
+import Ibox from './Inbox'
 import GroupUser from './GroupUser'
 import Historial from './Historial';
 
@@ -140,10 +140,10 @@ function Sidebar() {
                                 </a>
                                 {openMenus['Ticket'] && (
                                     <ul className="dropdown-menu">
-                                        <li><Link to="/Productos/Bancarios"><span className='icon'><PlaylistAddIcon sx={{ fontSize: 18 }} /></span> Nuevo Ticket</Link></li>
-                                        <li><Link to="/Productos/Financieros"><span className='icon'><AllInboxIcon sx={{ fontSize: 18 }} /></span> Bandeja de entra...</Link></li>
-                                        <li><Link to="/Productos/Financieros"><span className='icon'><CheckCircleIcon sx={{ fontSize: 18 }} /></span> Cerrado</Link></li>
-                                        <li><Link to="/Productos/Financieros"><span className="icon"><TimerOffIcon sx={{ fontSize: 18 }} /></span> Atrasado</Link></li>
+                                        <li><Link to=""><span className='icon'><PlaylistAddIcon sx={{ fontSize: 18 }} /></span> Nuevo Ticket</Link></li>
+                                        <li><Link to="/Inbox"><span className='icon'><AllInboxIcon sx={{ fontSize: 18 }} /></span> Bandeja de entra...</Link></li>
+                                        <li><Link to=""><span className='icon'><CheckCircleIcon sx={{ fontSize: 18 }} /></span> Cerrado</Link></li>
+                                        <li><Link to=""><span className="icon"><TimerOffIcon sx={{ fontSize: 18 }} /></span> Atrasado</Link></li>
                                     </ul>
                                 )}
                             </li>
@@ -230,9 +230,8 @@ function Sidebar() {
                 <main className="container-main">
                     <Routes>
                         <Route path='/Dashboard' element={<Dashboard />} />
-                        <Route path='/Productos/Bancarios' element={<Ticket />} />
-                        <Route path='/Productos/Financieros' element={<Ticket />} />
-                        <Route path='/Productos/Tecnologicos' element={<Ticket />} />
+                        <Route path='/Inbox' element={<Ibox />} />
+                        <Route path='/Productos/Financieros' element={<Ibox />} />
                         <Route path='/GroupUser' element={<GroupUser />} />
                         <Route path='/Historial' element={<Historial />} />
                     </Routes>
