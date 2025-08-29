@@ -112,6 +112,7 @@ function Sidebar() {
                     </div>
 
                     <div className="sidebar-nav">
+
                         <h6 className="nav-title">MENU</h6>
                         <ul>
 

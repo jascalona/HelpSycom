@@ -1,6 +1,9 @@
 import { useState } from "react";
 
 
+//Componentes 
+import AccordionExpandDefault from './ticket/Accordion'
+
 function CreateTicket() {
 
     const pages = "Nuevo Ticket";
@@ -16,7 +19,7 @@ function CreateTicket() {
             </article>
 
             <div className="main-ticket">
-                Holas2
+                <AccordionExpandDefault />
             </div>
 
         </div>
