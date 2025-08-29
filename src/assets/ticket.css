@@ -1,12 +1,24 @@
-.container-create-ticket {}
+.container-create-ticket {
+    padding: 15px;
+    height: 100%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.container-content{
+    overflow-y: auto;
+}
 
 .main-ticket {
     max-width: 100%;
     margin: 20px;
     border: solid 1px #f3f3f316;
-    border-radius: 5px;
+    border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.209);
     padding: 20px;
+    flex-grow: 1;
 }
 
 .accordion-h {
@@ -16,7 +28,7 @@
 .gallery-select {
     padding: 30px;
     display: grid;
-    gap: 10%;
+    gap: 10px;
 }
 
 @media (min-width: 991px) {
@@ -26,31 +38,33 @@
 }
 
 
-
 /*Estilos para el componente select*/
 .custom-select-container {
     position: relative;
-    width: 100%;
+    width: 85%;
     font-size: 18px;
-    font-family: Arial, sans-serif;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-    border-radius: 8px;
+}
+
+.select-label {
+    color: #fff;
+    font-size: 15px;
+    padding: 8px;
 }
 
 .selected-item {
-    border: solid 1px #555;
-    border-radius: 10px;
+    border: solid 1px #55555567;
+    border-radius: 6px;
     color: #e0e0e0;
-    padding: 12px 15px;
+    padding: 8px 15px;
     cursor: pointer;
-    background-color: #444;
+    background-color: #131313;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .selected-item:hover {
-    background-color: #555;
+    background-color: #191919;
 }
 
 .dropdown-arrow {
@@ -71,17 +85,16 @@
     list-style: none;
     padding: 0;
     margin: 0;
-    background-color: #444;
+    background-color: #191919;
     /* Fondo del menú desplegable */
-    border: solid 1px #555;
+    border: solid 1px #555555;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     z-index: 10;
-    overflow: hidden;
+    overflow-y: auto;
     max-height: 0;
     opacity: 0;
     transition: max-height 0.2s ease-out, opacity 0.3s ease-out;
-    /* Transiciones */
 }
 
 .options-list.open {
@@ -97,7 +110,5 @@
 }
 
 .options-list li:hover {
-    background-color: #666;
+    background-color: #232323;
 }
-
-/*Componet Select*/

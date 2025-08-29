@@ -13,15 +13,17 @@ function CreateTicket() {
 
         <div className="container-create-ticket">
 
-            <article className='pages'>
-                <p>{pages}</p>
-                <small>Crea metricas clave. Consulta Informes y analiza la informacion</small>
-            </article>
+            <div className="container-content">
+                <article className='pages'>
+                    <p>{pages}</p>
+                    <small>Crea metricas clave. Consulta Informes y analiza la informacion</small>
+                </article>
 
-            <div className="main-ticket">
-                <AccordionExpandDefault />
+                <div className="main-ticket">
+                    <AccordionExpandDefault />
+                </div>
+
             </div>
-
         </div>
     )
 
