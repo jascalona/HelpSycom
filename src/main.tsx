@@ -2,7 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './assets/index.css'
 import './assets/products.css'
-
+import './assets/ticket.css'
 
 import App from './App.tsx'
 import Sidebar from './resources/Sidebar.tsx'

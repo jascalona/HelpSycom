@@ -14,12 +14,12 @@
 .header-ticket {
     grid-area: header;
     background: #212121;
-    padding: 8px;
     border-radius: 2px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    height: 55px;
     display: flex;
     justify-content: space-between;
+    height: 55px;
+    padding: 8px 5%;
 }
 
 .header-ticket ul {
@@ -32,6 +32,10 @@
     margin: auto 5px;
     font-size: 20px;
     font-weight: 600;
+}
+
+.sub-menu span{
+    color: #fff;
 }
 
 hr {
@@ -103,13 +107,24 @@ hr {
 .sidebar .cards-message {
     width: 100%;
     line-height: 1.7;
+    transition: all .1s;
 }
 
-.cards-message .content-card{
+.cards-message .content-card {
     padding: 8px;
 }
 
-.h-message{
+.cards-message:hover {
+    background: #403f3f;
+    cursor: pointer;
+}
+
+.cards-message.active {
+    background: #403f3f;
+    border-left: 2px solid #00FF00; /* Una barra azul en el lateral izquierdo */
+}
+
+.h-message {
     display: flex;
     justify-content: space-between;
 }
@@ -188,4 +203,15 @@ header-content-ticket {
 .content-message .body-menssage {
     color: #fff;
 
+}
+
+/*COMPONENTE DROPDOWN*/
+
+.component-dropdown ul li{
+    margin: 0px;
+    transition: all .2s;
+}
+
+.component-dropdown ul li:hover{
+    background: #403f3f;
 }

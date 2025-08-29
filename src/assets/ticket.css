@@ -1,0 +1,13 @@
+.container-create-ticket {
+    background: #f3f3ff3f;
+}
+
+.main-ticket {
+    max-width: 100%;
+    margin: 20px;
+    border: solid 1px #f3f3f316;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.209);
+    padding: 20px;
+
+}

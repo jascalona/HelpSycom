@@ -3,7 +3,19 @@ import SearchIcon from '@mui/icons-material/Search';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import InfoIcon from '@mui/icons-material/Info';
 
+//Icons
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import { Link } from "react-router-dom";
+import SaveAltIcon from '@mui/icons-material/SaveAlt';
+import ShowChartIcon from '@mui/icons-material/ShowChart';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+
+
+import DropdownMenu from './Ibox/Dropdown';
+
 function Ticket() {
+
+    const pages = "Ibox";
     // Datos de ejemplo para los mensajes
     const messages = [
         {
@@ -36,9 +48,16 @@ function Ticket() {
         <>
             <div className="container-product">
                 <div className="header-ticket">
-                    <h3>Inbox</h3>
-                    <ul>
-                        <li>Other function</li>
+
+                    <h2>{pages}</h2>
+
+                    <ul className="sub-menu">
+                        <li><Link to="#ExportFile"><span className='icon'><SaveAltIcon sx={{ fontSize: 25 }} /></span></Link></li>
+                        <li><Link to="#tracerLog"><span className='icon'><ShowChartIcon sx={{ fontSize: 25 }} /></span></Link></li>
+                        <li><Link to="#Cerrado"><span className='icon'><CheckCircleIcon sx={{ fontSize: 25 }} /></span></Link></li>
+
+                        <DropdownMenu />
+                        
                     </ul>
                 </div>
 
