@@ -9,6 +9,7 @@ import { red } from '@mui/material/colors';
 //Componet ticket
 import Select from './Select';
 import { Label } from '@mui/icons-material';
+import TextInputs from './TextField';
 
 function AccordionExpandDefault() {
 
@@ -59,6 +60,36 @@ function AccordionExpandDefault() {
     { value: "No Afecta al Negocio", label: "No Afecta al Negocio" },
   ];
 
+  //Detalles del Solicitante
+  const nameSolicitante = [
+    { value: "", label: "-- Seleccione el Nombre --" },
+    { value: "Jose Escalona", label: "Jose Escalona" },
+    { value: "Miguel Hernadez", label: "Miguel Hernadez" },
+  ];
+
+  const ibp = [
+    { value: "", label: "-- Sitio de Incidencia --" },
+    { value: "0105", label: "0105 Mercantil" },
+    { value: "0114", label: "0114 Bancaribe" },
+  ];
+
+  const grupo = [
+    { value: "", label: "-- Seleccione el Grupo --" },
+    { value: "Nivel 1", label: "Nivel 1" },
+    { value: "Nivel 2", label: "Nivel 2" },
+    { value: "Nivel 3", label: "Nivel 3" },
+    { value: "BD", label: "BD" },
+    { value: "Nivel 1", label: "BCV" },
+  ];
+
+
+  const analista = [
+    { value: "", label: "-- Asigne al Personal --" },
+    { value: "Pedro Perez", label: "Pedro Perez" },
+    { value: "Juan Mecanico", label: "Juan Mecanico" },
+    { value: "Armando Rodriguez", label: "Armando Rodriguez" },
+  ];
+
   return (
     <div className='main-create-ticket'>
       <Accordion defaultExpanded style={{ background: '#181818', color: '#FFFFFF', }} className='accordion-h' >
@@ -70,6 +101,7 @@ function AccordionExpandDefault() {
           <Typography component="span" style={{ height: 40, border: 'none', fontSize: 23, }} >Nueva Incidencia</Typography>
         </AccordionSummary>
         <AccordionDetails className=''>
+
 
           <Typography className='gallery-select'>
             {/* Primer Select*/}
@@ -94,32 +126,56 @@ function AccordionExpandDefault() {
             />
 
             {/*Quinto Select*/}
-            <Select options={status}
+            <Select options={impacto}
               label={"Impacto"}
             />
 
-            
             {/*Quinto Select*/}
-            <Select options={status}
+            <Select options={impacto}
               label={"Impacto"}
             />
 
-            
-            {/*Quinto Select*/}
-            <Select options={status}
-              label={"Impacto"}
+            <TextInputs />
+
+          </Typography>
+
+          <br />
+
+          {/*Detalles del solicitante*/}
+          <div className="title-select">
+            <h2>Detalles del Solicitante</h2>
+          </div>
+          <Typography className='gallery-select'>
+            {/* Primer Select*/}
+            <Select options={nameSolicitante}
+              label={"Solicitante"}
             />
 
-            
-            {/*Quinto Select*/}
-            <Select options={status}
-              label={"Impacto"}
+            {/* Segundo Select*/}
+            <Select options={ibp}
+              label={"Sitio IBP"}
             />
 
+
+            {/*Tercero Select*/}
+            <Select options={grupo}
+              label={"Grupo"}
+            />
+
+            {/*Tercero Select*/}
+            <Select options={analista}
+              label={"Analista"}
+            />
 
           </Typography>
 
         </AccordionDetails>
+
+        <div className="btn-ticket">
+          <button>Restablecer</button>
+          <button>Enviar Solicitud</button>
+        </div>
+
       </Accordion>
 
       <Accordion style={{ background: '#212121', color: '#FFFFFF' }}>
@@ -136,6 +192,9 @@ function AccordionExpandDefault() {
           </Typography>
         </AccordionDetails>
       </Accordion>
+
+
+
     </div>
   );
 }
